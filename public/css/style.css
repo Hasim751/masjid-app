@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Scrollable Header */
+.header-container, .news-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #222;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+/* Scrolling Header */
+.header {
+    font-size: 2.5rem;
+    color: white;
+    display: inline-block;
+    animation: scroll-header 10s linear infinite;
+}
+
+/* Scrolling News */
+.news {
+    font-size: 1.8rem;
+    color: yellow;
+    display: inline-block;
+    animation: scroll-news 15s linear infinite;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-header {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-news {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Time Display */
+.time-display {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #5fee5f;
+    text-shadow: 0 0 10px #1dd31d;
+    margin: 20px 0;
+}
+
+/* Prayer Times Section */
+.prayer-times {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Section Box */
+.section {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border-bottom: 4px solid #ddf909;
+    border-top: 4px solid #ddf909;
+}
+
+/* Prayer Item */
+.prayer-item {
+    font-size: 1.8rem;
+    padding: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+}
+
+/* Center Text in Items */
+.prayer-item span {
+    flex: 1;
+    text-align: center;
+}
+
+/* Heading */
+.prayer-item-heading {
+    border-bottom: 3px solid #6fe52f;
+    padding-bottom: 12px;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .header {
+        font-size: 2rem;
+    }
+
+    .time-display {
+        font-size: 3rem;
+    }
+
+    .prayer-times {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .prayer-item {
+        font-size: 1.4rem;
+    }
+
+    .news {
+        font-size: 1.5rem;
+    }
+}
