@@ -68,8 +68,9 @@ class RamzanClock extends Component
 
     for ($i = 0; $i <= 4; $i++) {
         $date = Carbon::now('America/Regina')->addDays($i);
+      
         $times = $pt->getTimes($date, $latitude, $longitude, $timezone);
-
+        
         if (!$times || !isset($times['Fajr']) || !isset($times['Maghrib'])) {
             Log::error("Missing Sehri or Iftar time for: " . $date->format('Y-m-d'));
             $this->ramadanTimes[] = [

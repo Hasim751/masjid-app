@@ -1,8 +1,11 @@
 <div>
     <div class="header-container">
+        
         <div class="header">لَا إِلٰهَ إِلَّا اللهُ مُحَمَّدٌ رَسُولُ اللهِ</div>
+        <hr>
+        <div class="">Faizan-e-Madina Islamic Center Regina (Dawat-e-Islami Canada)</div>
     </div>
-
+    
     <div class="time-display" wire:poll.1s="updateTime">{{ $currentTime }}</div>
 
     <div class="prayer-times">
