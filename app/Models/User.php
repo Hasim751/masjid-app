@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -21,6 +23,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'status'
     ];
 
     /**
@@ -33,6 +37,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function masjids(): BelongsToMany
+    {
+        return $this->belongsToMany(Masjid::class, 'masjid_admins');
+    }
     /**
      * Get the attributes that should be cast.
      *
