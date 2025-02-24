@@ -1,107 +1,143 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+    background-color: #111;
+    color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #111; /* Dark theme */
-    color: #fff;
-    text-align: center;
+    overflow-x: hidden;
 }
-
-/* Main container */
 .container {
     width: 100%;
     max-width: 100%;
     padding: 10px;
 }
 
+/* Scrollable Header */
+.header-container, .news-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #222;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+/* Scrolling Header */
+.header {
+    font-size: 2.5rem;
+    color: white;
+    display: inline-block;
+    animation: scroll-header 10s linear infinite;
+}
+
+/* Scrolling News */
+.news {
+    font-size: 1.8rem;
+    color: yellow;
+    display: inline-block;
+    animation: scroll-news 15s linear infinite;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-header {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-news {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 /* Time Display */
-.clock {
-    font-size: 2rem;
+.time-display {
+    font-size: 5rem;
     font-weight: bold;
-    color: #0f0;
-    text-align: center;
+    color: #5fee5f;
+    text-shadow: 0 0 10px #1dd31d;
+    margin: 20px 0;
 }
 
-/* Prayer & Event Sections */
+/* Prayer Times Section */
+.prayer-times {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Section Box */
 .section {
-    background: #222;
+    background-color: #222;
+    padding: 20px;
     border-radius: 10px;
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 255, 0, 0.2);
-    border: 2px solid #ff0;
+    width: 90%;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border-bottom: 4px solid #ddf909;
+    border-top: 4px solid #ddf909;
 }
 
-/* Headers */
-.section h3 {
-    background: #333;
-    padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 2px solid #ff0;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-td, th {
-    padding: 10px;
+/* Prayer Item */
+.prayer-item {
+    font-size: 1.8rem;
+    padding: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #444;
+}
+
+/* Center Text in Items */
+.prayer-item span {
+    flex: 1;
     text-align: center;
 }
 
-/* Responsive Table */
-@media screen and (max-width: 768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+/* Heading */
+.prayer-item-heading {
+    border-bottom: 3px solid #6fe52f;
+    padding-bottom: 12px;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .header {
+        font-size: 2rem;
     }
 
-    td, th {
-        padding: 8px;
-        font-size: 14px;
+    .time-display {
+        font-size: 3rem;
     }
-}
 
-/* Ramzan Clock Section */
-.ramzan-clock {
-    background: #333;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    margin-top: 10px;
-}
+    .prayer-times {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.ramzan-clock h4 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ff0;
-}
+    .section {
+        width: 90%;
+    }
 
-/* Highlighted Box (Today’s Date) */
-.today-box {
-    background: #ff0;
-    color: #000;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 5px 0;
-}
+    .prayer-item {
+        font-size: 1.4rem;
+    }
 
-/* Footer */
-.footer {
-    font-size: 14px;
-    padding: 10px;
-    background: #111;
-    color: #ccc;
-    margin-top: 20px;
+    .news {
+        font-size: 1.5rem;
+    }
 }
